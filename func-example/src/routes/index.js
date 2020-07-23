@@ -3,7 +3,7 @@ import { Router, Route } from "react-router-dom";
 import history from "./history.js";
 import Signup from '../containers/Signup';
 import Profile from '../containers/Profile';
-import { PrivateRoute, PublicRoute } from '../routes/privateRoute';
+import { PrivateRoute, PublicRoute } from './customRoute';
 import LandingPage from '../containers/LandingPage'
 
 export const loadRoutes = () => {

@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { signup } from '../actions/auth';
-import history from '../routes/history';
-import { shouldRedirect } from '../routes/privateRoute';
 
 const Signup = () => {
   const [formInfo, setFormInfo] = useState({ password: '', email: '', name: '' })
-  const isAuthorized = useSelector(state => state.auth.isAuthorized);
   const dispatch = useDispatch()
 
 

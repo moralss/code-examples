@@ -14,7 +14,6 @@ export const logout = () => {
 }
 
 
-
 export const signup = (formInfo) => {
     return async dispatch => {
         try {

@@ -15,7 +15,7 @@ const signIn = (app) => {
         return res.json({ token });
       }
       else {
-        res.send(400);
+        return res.send(400);
       }
     } catch (err) {
       console.log(err)

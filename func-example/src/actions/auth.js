@@ -19,6 +19,7 @@ export const signup = (formInfo) => {
         try {
             const { data } = await axios.post('http://localhost:3003/signup', formInfo)
             const decodedToken = jwtDecode(data.token)
+            console.log("decodeToken", decodedToken)
             dispatch({ type: AUTH_SAVE_USER, payload: decodedToken })
             dispatch({ type: CHANGE_AUTHORIZATION, payload: true })
             localStorage.setItem("token", data.token)

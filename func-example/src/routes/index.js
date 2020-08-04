@@ -13,25 +13,25 @@ export const loadRoutes = () => {
     <Router history={history}>
       <div>
         <Navbar />
-        <Route
+        <PublicRoute
           exact
           path="/signup"
           component={props => <Signup {...props} />}
         />
 
-        <Route
+        <PrivateRoute
           exact
           path="/profile"
           component={props => <Profile {...props} />}
         />
 
-        <Route
+        <PublicRoute
           exact
           path="/"
           component={props => <LandingPage {...props} />}
         />
 
-        <Route
+        <PublicRoute
           exact
           path="/signin"
           component={props => <Login {...props} />}

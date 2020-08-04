@@ -8,20 +8,23 @@ const Signup = () => {
 
 
   const submit = () => {
+    console.log(formInfo)
     dispatch(signup(formInfo))
   }
 
   return (
     <div>
       <div>
-        <input type="password"
+        <input
+          type="password"
           name="password"
           placeholder="password"
           onChange={(e) => setFormInfo({ ...formInfo, [e.target.name]: e.target.value })}
           value={formInfo.password}
         />
 
-        <input type="email"
+        <input
+          type="email"
           name="email"
           placeholder="email"
           onChange={(e) => setFormInfo({ ...formInfo, [e.target.name]: e.target.value })}

@@ -36,7 +36,7 @@ export const PrivateRoute = ({
         props => store.getState().auth.isAuthorized ? (
           <Component {...rest} {...props} />
         ) : (
-            <Redirect to="/" />
+            <Redirect to="/signup" />
           )
       } />
   );

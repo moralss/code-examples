@@ -6,12 +6,15 @@ const bodyParser = require("body-parser");
 require('dotenv').config();
 const { signup } = require("./controllers/auth/signup");
 const { signIn } = require("./controllers/auth/signin")
+const { refreshToken } = require("./controllers/auth/refreshToken")
+
 const cors = require("cors");
 
 app.use(cors())
 app.use(bodyParser.json())
 signup(app)
 signIn(app)
+refreshToken(app)
 
 
 mongoose.connect(process.env.DB_STRING, { useNewUrlParser: true, useUnifiedTopology: true }).

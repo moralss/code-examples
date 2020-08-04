@@ -1,8 +1,11 @@
 var jwt = require('jsonwebtoken');
 
 const createToken = (userId, email) => {
-  date = new Date()
-  var token = jwt.sign({ userId, email, lat: date }, process.env.TOKEN_SECRET);
+  const expiresIn = 4;
+  var now = new Date();
+  // + expiresIn * 1000
+  expiryDate = now.getTime()
+  var token = jwt.sign({ userId, email, expireDate: expiryDate }, process.env.TOKEN_SECRET);
   return token
 }
 

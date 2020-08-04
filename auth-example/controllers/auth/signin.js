@@ -4,22 +4,24 @@ const { createToken } = require("../../security/tokenHelper")
 
 const signIn = (app) => {
   app.post('/signin', async (req, res) => {
-    const { email, password, name } = req.body;
+    const { email, password } = req.body;
 
     try {
-      const isCheckPass = await comparePassword(password, email);
       const user = await User.findOne({ email });
-      console.log(isCheckPass)
-      const token = await createToken(user.id, user.email);
-      if (isCheckPass) {
-        return res.json({ token });
-      }
-      else {
-        return res.send(400);
+      if (user) {
+        const isCheckPass = await comparePassword(password, email);
+        const token = await createToken(user.id, user.email);
+        if (isCheckPass) {
+          return res.json({ token });
+        }
+        if (!isCheckPass) {
+          return res.json({ error: "password or email exists" });
+        }
+      } else {
+        return res.json({ error: "user does not exist" });
       }
     } catch (err) {
-      console.log(err)
-      res.send(500).json(err)
+      res.send(500)
     }
 
   })

@@ -7,12 +7,6 @@ import { checkAuthState } from './routes/customRoute';
 
 function App () {
 
-  useEffect(() => {
-    checkAuthState()
-  }, [])
-
-
-
   return (
     <div className="App">
       {loadRoutes()}

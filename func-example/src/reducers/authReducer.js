@@ -1,9 +1,10 @@
-import { AUTH_SAVE_USER, CHANGE_AUTHORIZATION, LOGOUT_USER } from '../actions/actionTypes/index';
+import { AUTH_SAVE_USER, CHANGE_AUTHORIZATION, LOGOUT_USER, AUTH_ERROR } from '../actions/actionTypes/index';
 
 
 const initialState = {
   user: null,
-  isAuthorized: false
+  isAuthorized: false,
+  error: { error: null }
 };
 
 const authReducer = (state = initialState, action) => {
@@ -14,6 +15,8 @@ const authReducer = (state = initialState, action) => {
       return { ...state, isAuthorized: action.payload }
     case LOGOUT_USER:
       return { ...state, user: null }
+    case AUTH_ERROR:
+      return { ...state, error: action.payload }
     default:
       return state;
   }

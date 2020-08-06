@@ -14,12 +14,11 @@ const Navbar = () => {
     history.push(routeName)
   }
 
-
   return (
     <div style={{ textAlign: "center" }}>
       {!isAuthorized ? <button onClick={() => navigatePage('signup')}> signup </button> : null}
       {!isAuthorized ? <button onClick={() => navigatePage('signin')}> signin</button> : null}
-      <button onClick={() => navigatePage('logout')}> logout </button>
+      {isAuthorized ? <button onClick={() => navigatePage('logout')}> logout </button> : null}
     </div>
   )
 }

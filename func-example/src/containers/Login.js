@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { signin } from '../actions/auth';
+import { connect } from 'react-redux';
 
 const Login = () => {
   const [loginDetails, setloginData] = useState({ email: "", password: "" })
   const dispatch = useDispatch()
   const error = useSelector(state => state.auth.error.error)
 
-  const submit = () => {
-    console.log(loginDetails)
+  const submit = (e) => {
+    e.preventDefault();
     dispatch(signin(loginDetails))
   }
 
   return (
-    <div>
+    <form onSubmit={(e) => submit(e)}>
       <input type="text"
         placeholder="email"
         value={loginDetails.email}
@@ -26,8 +27,8 @@ const Login = () => {
         placeholder="password" />
       <br />
       <p style={{ color: "red" }}>{error} </p>
-      <button onClick={() => submit()}> submit </button>
-    </div>
+      <input type="submit" />
+    </form>
   )
 }
 

@@ -9,4 +9,5 @@ const createToken = (userId, email) => {
   return token
 }
 
+
 module.exports = { createToken }

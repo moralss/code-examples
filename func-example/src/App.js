@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import { useSelector, useDispatch } from "react-redux";
 import { loadRoutes } from './routes/index';
 import { checkAuthState } from './routes/customRoute';
-
+import { getCartItems } from './redux/actions/shopping'
 
 function App () {
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from "react-redux";
-import { logout } from '../actions/auth';
+import { logout } from '../redux/actions/auth';
 
 const Profile = () => {
   const dispatch = useDispatch()
@@ -9,7 +9,6 @@ const Profile = () => {
   return (
     <div>
       <h1> Welcome to your profile page </h1>
-      <button onClick={() => dispatch(logout())}> Logout</button>
     </div>
   )
 }

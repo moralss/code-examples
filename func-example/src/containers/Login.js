@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { signin } from '../actions/auth';
+import { signin } from '../redux/actions/auth';
 import { connect } from 'react-redux';
 
 const Login = () => {

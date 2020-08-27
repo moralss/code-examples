@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { signup } from '../actions/auth';
+import { signup } from '../redux/actions/auth';
 
 const Signup = () => {
   const [formInfo, setFormInfo] = useState({ password: '', email: '', name: '' })

@@ -1,7 +1,7 @@
 import React from "react";
 import { Router, Route, Redirect } from "react-router-dom";
 import jwtDecode from "jwt-decode";
-import { CHANGE_AUTHORIZATION, AUTH_SAVE_USER } from '../actions/actionTypes/index'
+import { CHANGE_AUTHORIZATION, AUTH_SAVE_USER } from '../redux/actions/actionTypes/index'
 import store from '../store/index';
 import axios from 'axios';
 

@@ -1,0 +1,7 @@
+export const AUTH_SAVE_USER = 'AUTH_SAVE_USER';
+export const CHANGE_AUTHORIZATION = " CHANGE_AUTHORIZATION";
+export const LOGOUT_USER = "LOGOUT_USER";
+export const AUTH_ERROR = "AUTH_ERROR";
+export const SAVE_PRODUCTS = "SAVE_PRODUCTS";
+export const SAVE_CART_ITEM = "SAVE_CART_ITEM";
+export const GET_TOTAL = "GET_TOTAL";

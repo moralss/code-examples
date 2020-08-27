@@ -1,6 +1,6 @@
 import axios from 'axios'
 import jwtDecode from "jwt-decode";
-import history from '../routes/history';
+import history from '../../routes/history';
 import { AUTH_ERROR, AUTH_SAVE_USER, CHANGE_AUTHORIZATION, LOGOUT_USER } from './actionTypes/index';
 
 

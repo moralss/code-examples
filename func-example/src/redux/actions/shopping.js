@@ -12,11 +12,11 @@ export const getProducts = () => {
   }
 }
 
-
 export const addItemToCart = (product) => {
   return async dispatch => {
     try {
-      await axios.post("http://localhost:3003/carts", product)
+      const token = localStorage.getItem("token");
+      await axios.post("http://localhost:3003/carts", product, { headers: { Authorization: token } })
       dispatch({ type: SAVE_CART_ITEM, payload: product })
       dispatch({ type: GET_TOTAL })
     } catch (e) {
@@ -25,11 +25,12 @@ export const addItemToCart = (product) => {
   }
 }
 
-
 export const getCartItems = (userId) => {
   return async dispatch => {
     try {
-      const { data } = await axios.get(`http://localhost:3003/carts/${userId}`)
+      const token = localStorage.getItem("token");
+      console.log(token)
+      const { data } = await axios.get(`http://localhost:3003/carts/${userId}`, { headers: { Authorization: token } })
       dispatch({ type: SAVE_CART_ITEM, payload: data })
       dispatch({ type: GET_TOTAL })
     } catch (e) {

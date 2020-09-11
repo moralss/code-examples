@@ -1,7 +1,7 @@
 const Cart = require("../../models/Cart");
-
+const { verifyToken } = require("../../security/tokenHelper")
 const carts = (app) => {
-  app.post('/carts', async (req, res) => {
+  app.post('/carts', verifyToken, async (req, res) => {
     const { userId, name, price } = req.body;
     try {
       await Cart({ userId, name, price }).save()
@@ -11,7 +11,7 @@ const carts = (app) => {
     }
   })
 
-  app.get('/carts/:userId', async (req, res) => {
+  app.get('/carts/:userId', verifyToken, async (req, res) => {
     const userId = req.params.userId;
     try {
       console.log(userId)
@@ -23,4 +23,8 @@ const carts = (app) => {
   })
 }
 
-module.exports = { carts } 
+
+module.exports = { carts }
+
+
+
